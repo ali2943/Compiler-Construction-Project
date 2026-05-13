@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QueryLite Web</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <section class="panel input-panel">
+      <h1>QueryLite Web</h1>
+      <p class="subtitle">Mini SQL Compiler with Visual Compiler Phases</p>
+      <textarea id="queryInput" placeholder="SELECT name FROM students WHERE age > 20;"></textarea>
+      <div class="actions">
+        <button id="runBtn" class="run">▶ Run</button>
+        <button id="clearBtn" class="clear">🧹 Clear</button>
+      </div>
+      <div id="errorPanel" class="error hidden"></div>
+    </section>
+
+    <section class="panel output-panel">
+      <div class="card"><h2>✅ Output</h2><pre id="output"></pre></div>
+      <div class="card"><h2>🔤 Lexical Analysis</h2><div id="tokens" class="tokens"></div></div>
+      <div class="card"><h2>📚 Symbol Table</h2><pre id="symbolTable"></pre></div>
+      <div class="card"><h2>🧠 Semantic Analysis</h2><pre id="semantic"></pre></div>
+      <div class="card"><h2>🧩 Intermediate Code Generation</h2><pre id="intermediate"></pre></div>
+      <div class="card"><h2>⚡ Code Optimization</h2><pre id="optimized"></pre></div>
+      <div class="card"><h2>⚙️ Code Generation (Final execution steps)</h2><pre id="codeGen"></pre></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
