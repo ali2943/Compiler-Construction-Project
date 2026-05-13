@@ -1,0 +1,135 @@
+:root {
+  color-scheme: dark;
+  --bg: #12141a;
+  --panel: #1b1f2a;
+  --card: #222838;
+  --text: #e8edf5;
+  --muted: #98a2b3;
+  --accent: #3b82f6;
+  --danger: #ef4444;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  min-height: 100vh;
+}
+
+.panel {
+  padding: 1rem;
+}
+
+.input-panel {
+  border-right: 1px solid #2d3446;
+  background: var(--panel);
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: -0.3rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 300px;
+  border-radius: 10px;
+  border: 1px solid #364058;
+  background: #111723;
+  color: var(--text);
+  padding: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.8rem;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.55rem 0.9rem;
+  color: white;
+  cursor: pointer;
+}
+
+button.run { background: var(--accent); }
+button.clear { background: #475467; }
+
+.output-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.8rem;
+  align-content: start;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #323c51;
+  border-radius: 12px;
+  padding: 0.75rem;
+  min-height: 170px;
+}
+
+.card h2 {
+  margin: 0 0 0.55rem;
+  font-size: 1rem;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #d4ddf2;
+  font-size: 0.86rem;
+}
+
+.tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.token {
+  border-radius: 999px;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid transparent;
+}
+
+.token.KEYWORD { background: #1d3a8a; border-color: #3b82f6; }
+.token.IDENTIFIER { background: #003b3d; border-color: #14b8a6; }
+.token.OPERATOR { background: #3f1f47; border-color: #d946ef; }
+.token.NUMBER { background: #3d2b00; border-color: #f59e0b; }
+.token.STRING { background: #3e160f; border-color: #f97316; }
+.token.PUNCTUATION { background: #374151; border-color: #6b7280; }
+
+.error {
+  margin-top: 0.8rem;
+  background: #3f1d1d;
+  color: #fecaca;
+  border: 1px solid #7f1d1d;
+  border-radius: 8px;
+  padding: 0.6rem;
+}
+
+.hidden { display: none; }
+
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+  .input-panel {
+    border-right: 0;
+    border-bottom: 1px solid #2d3446;
+  }
+}
